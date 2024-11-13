@@ -14,7 +14,29 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@workshop-template/data-access-admin": [
+        "libs/admin/data-access/src/index.ts"
+      ],
+      "@workshop-template/data-access-customer": [
+        "libs/customer/data-access/src/index.ts"
+      ],
+      "@workshop-template/feature-admin": [
+        "libs/admin/feature-admin/src/index.ts"
+      ],
+      "@workshop-template/feature-manage-customer": [
+        "libs/customer/feature-manage-customer/src/index.ts"
+      ],
+      "@workshop-template/feature-view-customer": [
+        "libs/customer/feature-view-customer/src/index.ts"
+      ],
+      "@workshop-template/types-admin": ["libs/admin/types/src/index.ts"],
+      "@workshop-template/types-customer": ["libs/customer/types/src/index.ts"],
+      "@workshop-template/ui-admin": ["libs/admin/ui/src/index.ts"],
+      "@workshop-template/ui-customer": ["libs/customer/ui/src/index.ts"],
+      "@workshop-template/utils-admin": ["libs/admin/utils/src/index.ts"],
+      "@workshop-template/utils-customer": ["libs/customer/utils/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

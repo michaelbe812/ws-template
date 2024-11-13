@@ -1,0 +1,36 @@
+{
+  "name": "feature-manage-customer",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/customer/feature-manage-customer/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": ["scope:customer", "type:feature"],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/customer/feature-manage-customer/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/customer/feature-manage-customer/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/customer/feature-manage-customer/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/customer/feature-manage-customer/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

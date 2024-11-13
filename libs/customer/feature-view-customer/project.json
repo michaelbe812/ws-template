@@ -1,0 +1,36 @@
+{
+  "name": "feature-view-customer",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/customer/feature-view-customer/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": ["scope:customer", "type:feature"],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/customer/feature-view-customer/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/customer/feature-view-customer/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/customer/feature-view-customer/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/customer/feature-view-customer/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}
